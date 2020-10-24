@@ -1,0 +1,24 @@
+{
+  "name": "top-etch-a-sketch",
+  "version": "1.0.0",
+  "description": "A basic sketch toy as part of [The Odin Project](https://theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjsilvestre/top-etch-a-sketch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjsilvestre/top-etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/pjsilvestre/top-etch-a-sketch#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.12.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
