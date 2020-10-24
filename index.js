@@ -3,7 +3,7 @@
  * @return {Element} The main div container
  */
 function getGridContainer() {
-  return document.querySelector('#gridContainer');
+  return document.querySelector('#grid-container');
 }
 
 /**
@@ -15,7 +15,6 @@ function addGridSquares() {
   // TODO variable grid size
   for (let i = 0; i < 256; i++) {
     const grid = document.createElement('div');
-    grid.textContent = `grid-square-${i}`;
     grid.classList.add('grid-square');
     gridContainer.appendChild(grid);
   }

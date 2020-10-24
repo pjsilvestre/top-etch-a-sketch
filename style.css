@@ -1,6 +1,15 @@
-#gridContainer {
+#grid-container {
   display: grid;
-  grid-template-rows: repeat(16, 6.25%);
-  grid-template-columns: repeat(16, 6.25%);
+  grid-template-rows: repeat(16, 25px);
+  grid-template-columns: repeat(16, 25px);
 }
 
+.grid-square {
+  border: 0.1px solid;
+  column-gap: 0px;
+  padding: 10px;
+  margin: 1px;
+}
+.grid-square:hover {
+  background-color: black;
+}
