@@ -14,9 +14,14 @@ function addGridSquares() {
 
   // TODO variable grid size
   for (let i = 0; i < 256; i++) {
-    const grid = document.createElement('div');
-    grid.classList.add('grid-square');
-    gridContainer.appendChild(grid);
+    const square = document.createElement('div');
+    square.classList.add('grid-square');
+
+    square.addEventListener('mouseover', () => {
+      square.classList.add('filled-in');
+    });
+
+    gridContainer.appendChild(square);
   }
 }
 

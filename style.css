@@ -7,9 +7,9 @@
 .grid-square {
   border: 0.1px solid;
   column-gap: 0px;
-  padding: 10px;
   margin: 1px;
 }
-.grid-square:hover {
+
+.filled-in {
   background-color: black;
 }
