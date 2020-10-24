@@ -1,0 +1,6 @@
+#gridContainer {
+  display: grid;
+  grid-template-rows: repeat(16, 6.25%);
+  grid-template-columns: repeat(16, 6.25%);
+}
+
