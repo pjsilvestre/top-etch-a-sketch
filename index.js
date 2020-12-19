@@ -1,16 +1,9 @@
 /**
- * Gets the document's main div container
- * @return {Element} The main div container
- */
-function getGridContainer() {
-  return document.querySelector('#grid-container');
-}
-
-/**
- * Adds grid squares to the main div container
+ * Adds grid squares to the document body
  */
 function addGridSquares() {
-  const gridContainer = getGridContainer();
+  const gridContainer = document.createElement('div');
+  gridContainer.id = 'grid-container';
 
   // TODO variable grid size
   for (let i = 0; i < 256; i++) {
@@ -23,6 +16,8 @@ function addGridSquares() {
 
     gridContainer.appendChild(square);
   }
+
+  document.body.appendChild(gridContainer);
 }
 
 addGridSquares();
