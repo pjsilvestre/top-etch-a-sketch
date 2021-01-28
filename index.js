@@ -10,6 +10,7 @@ function addGridSquares(squaresPerRow) {
   }
 
   const gridContainer = document.createElement('div');
+  gridContainer.id = 'grid-container';
 
   const gridStyle = {
     display: 'grid',
@@ -33,5 +34,25 @@ function addGridSquares(squaresPerRow) {
   document.body.appendChild(gridContainer);
 }
 
+/**
+ * Resets the grid
+ */
+function resetGrid() {
+  const gridContainer = document.getElementById('grid-container');
+  document.body.removeChild(gridContainer);
+  addGridSquares(defaultSquaresPerRow);
+}
+
+/**
+ * Initializes the reset button
+ */
+function initializeResetButton() {
+  const resetButton = document.getElementById('reset-button');
+  resetButton.addEventListener('click', () =>
+    resetGrid(),
+  );
+}
+
 const defaultSquaresPerRow = 16;
 addGridSquares(defaultSquaresPerRow);
+initializeResetButton();
