@@ -1,10 +1,16 @@
+const defaultSquaresPerRow = 16;
+const minSquaresPerRow = 1;
+const maxSquaresPerRow = 100;
+initializeGrid(defaultSquaresPerRow);
+initializeResetButton();
+
 /**
  * Creates the grid and appends it to the document's body
  * @param {Number} squaresPerRow The desired number of squares per row
  */
-function addGridSquares(squaresPerRow) {
+function initializeGrid(squaresPerRow) {
   if (typeof squaresPerRow !== 'number') {
-    console.trace(`addGridSquares invoked with non-number argument: ` +
+    console.trace(`initializeGrid invoked with non-number argument: ` +
       `${squaresPerRow}`);
     return;
   }
@@ -36,11 +42,18 @@ function addGridSquares(squaresPerRow) {
 
 /**
  * Resets the grid
+ * @param {Number} squaresPerRow The desired number of squares per row
  */
-function resetGrid() {
+function resetGrid(squaresPerRow) {
+  if (typeof squaresPerRow !== 'number') {
+    console.trace(`resetGrid invoked with non-number argument: ` +
+      `${squaresPerRow}`);
+    return;
+  }
+
   const gridContainer = document.getElementById('grid-container');
   document.body.removeChild(gridContainer);
-  addGridSquares(defaultSquaresPerRow);
+  initializeGrid(squaresPerRow);
 }
 
 /**
@@ -49,10 +62,24 @@ function resetGrid() {
 function initializeResetButton() {
   const resetButton = document.getElementById('reset-button');
   resetButton.addEventListener('click', () =>
-    resetGrid(),
+    resetGrid(promptUserSquaresPerRow()),
   );
 }
 
-const defaultSquaresPerRow = 16;
-addGridSquares(defaultSquaresPerRow);
-initializeResetButton();
+/**
+ * Prompt user to input desired number of squares per row
+ * @return {Number} The desired number of squares per row
+ */
+function promptUserSquaresPerRow() {
+  let squaresPerRow = parseInt(prompt('Number of squares per row? ' +
+    `(min: ${minSquaresPerRow}, max: ${maxSquaresPerRow})`,
+  defaultSquaresPerRow));
+
+  while (squaresPerRow < minSquaresPerRow|| 100 < squaresPerRow) {
+    squaresPerRow = parseInt(prompt('Number of squares per row? ' +
+    `(min: ${minSquaresPerRow}, max: ${maxSquaresPerRow})`,
+    defaultSquaresPerRow));
+  }
+
+  return squaresPerRow;
+}
